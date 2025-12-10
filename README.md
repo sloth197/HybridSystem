@@ -53,7 +53,8 @@
       - 카메라 신호 오류
 
  ▼ MES/Server 전달용 최종 구조체 생성
-──────────────────────────────  ### 5. Output Layer
+──────────────────────────────  
+### 5. Output Layer
  • 검사 결과: OK / NG  
  • 불량 타입(B1/B2/B3 등)  
  • Confidence Score  
@@ -62,7 +63,8 @@
  • 로그 저장(JSON / DB)
 
  ▼ MES 또는 Dashboard 서버 전송
-──────────────────────────────  ### 6. MES / Server Integration
+──────────────────────────────  
+### 6. MES / Server Integration
  • REST API / MQTT / TCP Socket  
  • 결과 DB 저장 (MySQL / AWS RDS)  
  • 이미지 파일 저장 (NAS / S3)  
