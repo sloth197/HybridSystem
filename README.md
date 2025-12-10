@@ -21,7 +21,8 @@
  • 전처리 결과 캐시 저장
 
  ▼ AI 모델 입력용 224×224 / 320×320 변환
-──────────────────────────────  ### 3. AI Classification Layer
+──────────────────────────────  
+### 3. AI Classification Layer
  • Pretrained Model (ONNX Runtime 기반)  
       - EfficientNet-B0  
       - MobileNetV3 Large  
