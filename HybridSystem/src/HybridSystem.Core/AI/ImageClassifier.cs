@@ -29,7 +29,7 @@ namespace HybridSystem.Core.AI
             if (!File.Exists(modelsPath))
             {
                 throw new FileNotFoundException("ONNX model not found", modelPath);
-
+            }
             if (!File.Exist(labelsPath))
             {
                 throw new FileNotFoundException("Lables file more found", labelsPath);
