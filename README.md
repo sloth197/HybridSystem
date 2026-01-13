@@ -1,72 +1,68 @@
 # HybridSystem
- 산업/제조 환경에서 사용가능한 이미지 인식과 바코드 인식으로 인한 불량을 구분하는 하이브리드 자동 분류 시스템
 
- AI 기반의 이미지 분류와 Barcode/QCR 인식을 함께 사용하여 단일 방식보다 정확하고 오류를 줄이는 결과를 도출
+## 📌 프로젝트 개요
 
- ## Architecture
- 
- ### 1. Image Acquisition Layer
- • 산업용 카메라 (Area / Line Scan)
- • 조명 제어기  
- • PLC 신호(트리거, 동작 상태)
- • 이미지 캡처 드라이버 (OpenCV / Vendor SDK)
+HybridSystem은 제조·물류 환경에서 **이미지 센서 기반 검사와 바코드 인식**을 결합하여 불량을 자동 판정하는 **C# 기반 하이브리드 검사 시스템**입니다.
 
- ▼ 이미지 RAW 데이터 전송
-──────────────────────────────
- ### 2. Edge Preprocessing Layer
- • 이미지 Normalize / Noise 제거  
- • ROI 설정 (작업 라인 별 Zone)  
- • 배경 제거(Threshold / Morphology)  
- • 윤곽(Contour) 감지 → 객체 영역 분리  
- • 전처리 결과 캐시 저장
+단일 인식 방식의 한계를 보완하기 위해 **AI 분류 모델과 룰 기반 검증 로직**을 결합하여 판정 신뢰도를 높이고, 검사 결과를 로그 및 외부 시스템과 연동할 수 있도록 설계되었습니다.
 
- ▼ AI 모델 입력용 224×224 / 320×320 변환
-──────────────────────────────  
-### 3. AI Classification Layer
- • Pretrained Model (ONNX Runtime 기반)  
-      - EfficientNet-B0  
-      - MobileNetV3 Large  
-      - ResNet50 (옵션)
- • 분류 목적:  
-      - 정상(OK)  
-      - 불량 타입 B1  
-      - 불량 타입 B2  
-      - 불량 타입 B3  
-      - 기타 불량  
- • Confidence Score 출력 (Softmax 기반)
+---
 
- ▼ Hybrid Logic으로 결과 전송
-──────────────────────────────
- ### 4. Hybrid Decision Logic Layer
- • AI 결과 + Rule 기반 검사 조합  
-      - 치수 검사(픽셀 기반)  
-      - ROI 영역 누락 여부  
-      - 특정 패턴 미검출 확인  
- • AI Confidence Threshold 검사  
-      - 예: 85% 미만이면 “AI 불확실”  
- • AI + Rule 결과 통합 판단  
-      - 최종: OK / NG  
-      - NG → 불량 타입 B# 지정  
- • 예외 처리  
-      - 이미지 불량  
-      - 초점, 조도 문제  
-      - 카메라 신호 오류
+## 🎯 개발 배경
 
- ▼ MES/Server 전달용 최종 구조체 생성
-──────────────────────────────  
-### 5. Output Layer
- • 검사 결과: OK / NG  
- • 불량 타입(B1/B2/B3 등)  
- • Confidence Score  
- • 검사 시간(ms)  
- • 원본/전처리/결과 이미지 스냅샷  
- • 로그 저장(JSON / DB)
+제조 현장에서는 이미지 검사 또는 바코드 인식 중 하나만 사용하는 경우가 많아 다음과 같은 문제가 발생합니다.
 
- ▼ MES 또는 Dashboard 서버 전송
-──────────────────────────────  
-### 6. MES / Server Integration
- • REST API / MQTT / TCP Socket  
- • 결과 DB 저장 (MySQL / AWS RDS)  
- • 이미지 파일 저장 (NAS / S3)  
- • 관리자 Dashboard UI  
- • 통계/리포트 생성  
+* 이미지 검사 단독 사용 시 오검출 발생
+* 바코드 인식 오류 시 전체 공정 중단
+* 수동 판정 의존으로 인한 작업자 피로 및 편차
+
+HybridSystem은 이러한 문제를 해결하기 위해 **복수의 판정 기준을 결합한 자동 검사 구조**를 목표로 개발되었습니다.
+
+---
+
+## ⚙️ 시스템 동작 흐름
+
+1. 산업용 카메라를 통해 검사 대상 이미지 캡처
+2. 이미지 전처리 (노이즈 제거, ROI 추출)
+3. ONNX Runtime 기반 AI 모델을 통한 분류 수행
+4. 바코드 인식 결과 및 룰 기반 조건과 결합
+5. 최종 OK / NG 및 불량 유형(B1/B2/B3) 판정
+6. 검사 결과를 로그(JSON/DB)로 저장
+7. REST API 또는 TCP를 통해 외부 시스템(MES/서버) 연동
+
+---
+
+## 🧠 핵심 특징
+
+* **하이브리드 판정 구조**: AI 분류 + 룰 기반 검증 결합
+* **확장성 고려 설계**: 외부 MES/서버 연동 가능
+* **운영 친화적 구조**: 검사 이력 로그 및 이미지 스냅샷 저장
+* **신뢰도 개선**: 단일 검사 방식 대비 오판율 감소 목표
+
+---
+
+## 🛠️ 사용 기술
+
+* Language: C#
+* Framework: .NET
+* Image Processing: OpenCV
+* AI Inference: ONNX Runtime
+* Data Handling: JSON, DB Logging
+* Communication: REST API / TCP
+
+---
+
+## 📁 프로젝트 구조 (요약)
+
+```
+HybridSystem/
+ ├─ Core/              # 판정 로직 및 공통 모듈
+ ├─ Vision/            # 이미지 처리 및 AI 추론
+ ├─ Barcode/           # 바코드 인식 모듈
+ ├─ Communication/     # 서버/MES 연동
+ ├─ Logging/           # 검사 결과 로그 관리
+ └─ UI/                # 검사 상태 확인 UI
+```
+
+---
+
