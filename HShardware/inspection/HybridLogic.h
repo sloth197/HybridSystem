@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-
+//AI 추론 함수
 class HybridLogic
 {
     public:
