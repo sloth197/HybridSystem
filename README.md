@@ -41,14 +41,16 @@ HybridSystem은 이러한 문제를 해결하기 위해 **복수의 판정 기�
 
 ---
 
-## 🛠️ 사용 기술
+##  기술 스택
 
 * Language: C#
-* Framework: .NET
+* Framework: .NET 8
 * Image Processing: OpenCV
 * AI Inference: ONNX Runtime
 * Data Handling: JSON, DB Logging
 * Communication: REST API / TCP
+* UI: WPF
+* Test: xUnit
 
 ---
 
@@ -93,3 +95,22 @@ HybridSystem/
 	- 결과 검사 출력 후 다음 검사 대기 변경
 
 => 대기 -> 트리거 입력 -> 이미지 캡쳐 -> AI 추론 실행 -> 결과 통보 -> 대기 
+
+
+------------------------
+
+## 26/3/4 UI 업데이트
+
+1.PortfolioUI 신규 추가
+	- WPF 기반 물류 시스템 검수/분류 시뮬레이터 구현
+	- PLC 흐름: IDLE -> INSPECT -> RESULT -> IDLE
+
+2. 객체 형상 변경
+   	- 크기 small, midium, big box 변경
+  
+3. 검사 파이프라인 및 로직 구성
+   	- 검사 결과 (CSV, JSONL) 저장
+   	- 화면 상단 (Total, Ok Rate, NG Rate, Barcode Fail Rate) 통계 표시
+  
+4. 데모 자료 (GIF) 추가
+     - `PortfolioUI/docs/gif/auto-run.gif`
