@@ -1,8 +1,9 @@
 #pragma once
+
 #include <string>
 
 class Barcode
 {
-    public:
-        std::string read();
+public:
+    std::string read() const;
 };

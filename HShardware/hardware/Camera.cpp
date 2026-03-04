@@ -1,15 +1,15 @@
 #include "Camera.h"
+#include <array>
 #include <cstdlib>
 
-std::string Camera::captureImage()
+std::string Camera::captureImage() const
 {
-    //captureImage: 실제로 보이는 카메라 -> 이미지 파일 경로 변경
-    if (rand() % 2 == 0)
-    {//정상 이미지
-        return "images/ok/sample1.jpg";
-    }
-    else
-    {//불량 이미지
-        return "images/fail/sample2.jpg"
-    }
+    static const std::array<const char*, 4> kSamples = {
+        "images/ok/sample1.jpg",
+        "images/ok/sample2.jpg",
+        "images/fail/sample1.jpg",
+        "images/fail/sample2.jpg",
+    };
+
+    return kSamples[std::rand() % kSamples.size()];
 }

@@ -1,27 +1,69 @@
-#include "hardware/Camera.h"
 #include "hardware/Barcode.h"
+#include "hardware/Camera.h"
 #include "firmware/PLC.h"
 #include "inspection/HybridLogic.h"
+#include <cstdlib>
+#include <ctime>
+#include <iomanip>
 #include <iostream>
+#include <string>
 
-float runInference(const std::string& imagePath);
+float runInference(const std::string& imagePath)
+{
+    const bool imageLooksDefective =
+        imagePath.find("/fail/") != std::string::npos ||
+        imagePath.find("\\fail\\") != std::string::npos ||
+        imagePath.find("fail") != std::string::npos;
+
+    const float random01 = static_cast<float>(std::rand()) / static_cast<float>(RAND_MAX);
+    if (imageLooksDefective)
+    {
+        return 0.15f + (0.35f * random01);
+    }
+
+    return 0.60f + (0.39f * random01);
+}
+
 int main()
-{//PLC 모듈 함수 생성
+{
+    std::srand(static_cast<unsigned int>(std::time(nullptr)));
+
     PLC plc;
     Camera camera;
     Barcode barcode;
     HybridLogic logic;
-    
-    //검사 트리거 입력
-    plc.trigger();
-    //이미지 캡쳐
-    std::string image = camera.captureImage();
-    //물품의 바코드 읽기
-    std::string code  = barcode.read();
-    //AI 추론 실행
-    float aiScore = runInference(image);
-    //AI + 바코드 교차 판단 진행
-    std::string result = logic.decide(aiScore, code);
-    //PLC 결과 전송
+
+    constexpr int kCycleCount = 10;
+    int okCount = 0;
+    int failCount = 0;
+
+    std::cout << "[SIM] Hybrid virtual inspection start\n";
+    for (int cycle = 1; cycle <= kCycleCount; ++cycle)
+    {
+        std::cout << "\n[SIM] Cycle " << cycle << '\n';
+        plc.trigger();
+
+        const std::string image = camera.captureImage();
+        const std::string code = barcode.read();
+        const float aiScore = runInference(image);
+        const std::string result = logic.decide(aiScore, code);
+        plc.setResult(result);
+
+        std::cout << "  image   : " << image << '\n';
+        std::cout << "  barcode : " << code << '\n';
+        std::cout << "  aiScore : " << std::fixed << std::setprecision(2) << aiScore << '\n';
+        std::cout << "  final   : " << result << '\n';
+
+        if (result == "OK")
+        {
+            ++okCount;
+        }
+        else
+        {
+            ++failCount;
+        }
+    }
+
+    std::cout << "\n[SIM] Summary - OK: " << okCount << ", FAIL: " << failCount << '\n';
     return 0;
 }
