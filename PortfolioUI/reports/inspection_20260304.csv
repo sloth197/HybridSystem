@@ -1,0 +1,59 @@
+started_at,completed_at,object_id,shape_kind,ground_truth_defect,barcode_success,barcode_value,barcode_confidence,shape_is_defect,shape_label,shape_score,final_result,reason,plc_signal
+2026-03-04 14:19:36,2026-03-04 14:19:37,141937-0001,SmallBox,None,true,PRD-260304-4587-FAIL,0.9174,false,Normal,0.1095,Ng,Barcode lot marked as FAIL,NG
+2026-03-04 14:19:38,2026-03-04 14:19:39,141938-0002,MediumBox,None,true,PRD-260304-1996-OK,0.9206,false,Normal,0.0540,Ok,All checks passed,OK
+2026-03-04 14:19:39,2026-03-04 14:19:39,141939-0003,LargeBox,None,true,PRD-260304-6358-OK,0.9899,false,Normal,0.2446,Ok,All checks passed,OK
+2026-03-04 14:19:40,2026-03-04 14:19:41,141941-0004,SmallBox,None,true,PRD-260304-1?45-OK,0.9172,false,Normal,0.1822,Ok,All checks passed,OK
+2026-03-04 14:19:41,2026-03-04 14:19:42,141941-0005,MediumBox,None,true,PRD-260304-1563-OK,0.9470,false,Normal,0.2406,Ok,All checks passed,OK
+2026-03-04 14:19:42,2026-03-04 14:19:42,141942-0006,SmallBox,None,true,PRD-260304-2296-OK,0.9457,false,Normal,0.0641,Ok,All checks passed,OK
+2026-03-04 14:19:42,2026-03-04 14:19:42,141942-0007,MediumBox,None,true,PRD-260304-1766-OK,0.9610,true,Crack,0.6598,Ng,Shape defect detected: Crack (0.66),NG
+2026-03-04 14:19:42,2026-03-04 14:19:43,141942-0008,LargeBox,None,true,PRD-260304-8355-OK,0.8635,false,Normal,0.1001,Ok,All checks passed,OK
+2026-03-04 14:19:42,2026-03-04 14:19:43,141943-0009,LargeBox,Crack,true,PRD-260304-6166-OK,0.9146,true,Crack,0.6807,Ng,Shape defect detected: Crack (0.68),NG
+2026-03-04 14:19:42,2026-03-04 14:19:43,141943-0010,MediumBox,None,true,PRD-260304-4054-OK,0.8702,false,Normal,0.1511,Ok,All checks passed,OK
+2026-03-04 14:19:44,2026-03-04 14:19:45,141944-0011,MediumBox,None,true,PRD-260304-4879-FAIL,0.9168,false,Normal,0.1519,Ng,Barcode lot marked as FAIL,NG
+2026-03-04 14:19:45,2026-03-04 14:19:46,141945-0012,MediumBox,Scratch,true,PRD-260304-4230-OK,0.8937,true,Scratch,0.7877,Ng,Shape defect detected: Scratch (0.79),NG
+2026-03-04 14:19:46,2026-03-04 14:19:47,141946-0013,LargeBox,None,true,PRD-260304-6189-OK,0.9635,false,Normal,0.1774,Ok,All checks passed,OK
+2026-03-04 14:19:47,2026-03-04 14:19:48,141947-0014,LargeBox,None,true,PRD-260304-8409-OK,0.9299,false,Normal,0.2677,Ok,All checks passed,OK
+2026-03-04 14:19:48,2026-03-04 14:19:49,141948-0015,LargeBox,None,true,PRD-260304-4361-OK,0.9584,false,Normal,0.3260,Ok,All checks passed,OK
+2026-03-04 14:19:49,2026-03-04 14:19:50,141949-0016,LargeBox,Crack,true,PRD-260304-7754-OK,0.9419,false,Normal,0.3724,Ok,All checks passed,OK
+2026-03-04 14:43:13,2026-03-04 14:43:13,144313-0018,MediumBox,Stain,true,PRD-260304-9957-OK,0.8884,false,Normal,0.5179,Ok,All checks passed,OK
+2026-03-04 14:43:14,2026-03-04 14:43:14,144314-0019,SmallBox,None,false,,0.2330,false,Normal,0.2013,Ng,Barcode read failed,NG
+2026-03-04 14:43:15,2026-03-04 14:43:15,144315-0020,SmallBox,None,true,PRD-260304-5841-OK,0.8820,false,Normal,0.0405,Ok,All checks passed,OK
+2026-03-04 14:43:16,2026-03-04 14:43:16,144316-0021,LargeBox,None,true,PRD-260304-8349-OK,0.8808,false,Normal,0.2515,Ok,All checks passed,OK
+2026-03-04 14:43:17,2026-03-04 14:43:17,144317-0022,MediumBox,None,true,PRD-260304-2845-OK,0.9378,false,Normal,0.3143,Ok,All checks passed,OK
+2026-03-04 14:43:18,2026-03-04 14:43:18,144318-0023,MediumBox,Crack,true,PRD-260304-5586-OK,0.9597,true,Crack,0.9689,Ng,Shape defect detected: Crack (0.97),NG
+2026-03-04 14:43:19,2026-03-04 14:43:20,144319-0024,LargeBox,None,true,PRD-260304-6886-OK,0.9002,false,Normal,0.1681,Ok,All checks passed,OK
+2026-03-04 14:43:20,2026-03-04 14:43:21,144320-0025,MediumBox,None,true,PRD-260304-2001-FAIL,0.8601,false,Normal,0.0936,Ng,Barcode lot marked as FAIL,NG
+2026-03-04 14:43:21,2026-03-04 14:43:22,144321-0026,MediumBox,None,true,PRD-260304-6865-OK,0.9411,false,Normal,0.1614,Ok,All checks passed,OK
+2026-03-04 14:43:22,2026-03-04 14:43:23,144322-0027,MediumBox,None,true,PRD-260304-8267-OK,0.9141,false,Normal,0.1460,Ok,All checks passed,OK
+2026-03-04 14:43:23,2026-03-04 14:43:24,144323-0028,MediumBox,None,true,PRD-260304-2587-OK,0.9038,false,Normal,0.0815,Ok,All checks passed,OK
+2026-03-04 14:43:24,2026-03-04 14:43:25,144324-0029,SmallBox,Scratch,true,PRD-260304-6964-FAIL,0.8736,true,Scratch,0.9064,Ng,Shape defect detected: Scratch (0.91),NG
+2026-03-04 14:43:25,2026-03-04 14:43:26,144325-0030,LargeBox,Crack,true,PRD-260304-6223-OK,0.9528,true,Crack,0.9435,Ng,Shape defect detected: Crack (0.94),NG
+2026-03-04 14:43:26,2026-03-04 14:43:27,144327-0031,LargeBox,Stain,true,PRD-260304-1358-OK,0.9499,true,Stain,0.6696,Ng,Shape defect detected: Stain (0.67),NG
+2026-03-04 14:43:27,2026-03-04 14:43:28,144328-0032,MediumBox,Missing,true,PRD-260304-7044-OK,0.9196,true,Missing,0.9751,Ng,Shape defect detected: Missing (0.98),NG
+2026-03-04 14:43:28,2026-03-04 14:43:29,144329-0033,MediumBox,None,true,PRD-260304-5038-OK,0.9857,false,Normal,0.1198,Ok,All checks passed,OK
+2026-03-04 14:43:29,2026-03-04 14:43:30,144330-0034,MediumBox,None,true,PRD-260304-9834-OK,0.9779,false,Normal,0.2664,Ok,All checks passed,OK
+2026-03-04 14:43:31,2026-03-04 14:43:31,144331-0035,SmallBox,Missing,true,PRD-260304-4421-OK,0.9608,true,Missing,0.7280,Ng,Shape defect detected: Missing (0.73),NG
+2026-03-04 14:43:32,2026-03-04 14:43:32,144332-0036,MediumBox,Missing,false,,0.3018,true,Missing,0.7510,Ng,Barcode read failed,NG
+2026-03-04 14:43:33,2026-03-04 14:43:33,144333-0037,LargeBox,Stain,false,,0.2113,true,Stain,0.7566,Ng,Barcode read failed,NG
+2026-03-04 14:43:34,2026-03-04 14:43:34,144334-0038,SmallBox,None,true,PRD-260304-2429-OK,0.9898,false,Normal,0.1353,Ok,All checks passed,OK
+2026-03-04 14:43:35,2026-03-04 14:43:35,144335-0039,LargeBox,None,true,PRD-260304-9711-OK,0.8945,false,Normal,0.2694,Ok,All checks passed,OK
+2026-03-04 14:43:36,2026-03-04 14:43:36,144336-0040,LargeBox,Crack,true,PRD-260304-9865-OK,0.9641,true,Crack,0.9467,Ng,Shape defect detected: Crack (0.95),NG
+2026-03-04 14:44:59,2026-03-04 14:44:59,144459-0041,LargeBox,Crack,true,PRD-260304-5355-OK,0.8640,true,Crack,0.7612,Ng,Shape defect detected: Crack (0.76),NG
+2026-03-04 14:45:00,2026-03-04 14:45:01,144500-0042,MediumBox,None,true,PRD-260304-4737-OK,0.9331,false,Normal,0.0579,Ok,All checks passed,OK
+2026-03-04 14:45:26,2026-03-04 14:45:26,144526-0043,MediumBox,Scratch,true,PRD-260304-1953-OK,0.9733,true,Scratch,0.9197,Ng,Shape defect detected: Scratch (0.92),NG
+2026-03-04 14:45:27,2026-03-04 14:45:27,144527-0044,MediumBox,None,true,PRD-260304-4934-OK,0.8810,false,Normal,0.0357,Ok,All checks passed,OK
+2026-03-04 14:45:28,2026-03-04 14:45:28,144528-0045,MediumBox,None,false,,0.2902,false,Normal,0.2722,Ng,Barcode read failed,NG
+2026-03-04 14:45:29,2026-03-04 14:45:29,144529-0046,LargeBox,Scratch,true,PRD-260304-5586-OK,0.8834,true,Scratch,0.8045,Ng,Shape defect detected: Scratch (0.80),NG
+2026-03-04 14:45:30,2026-03-04 14:45:31,144530-0047,SmallBox,None,true,PRD-260304-6502-OK,0.9086,false,Normal,0.3108,Ok,All checks passed,OK
+2026-03-04 14:45:31,2026-03-04 14:45:32,144531-0048,LargeBox,None,true,PRD-260304-5474-OK,0.8712,false,Normal,0.2811,Ok,All checks passed,OK
+2026-03-04 14:45:32,2026-03-04 14:45:33,144532-0049,MediumBox,None,true,PRD-260304-7693-OK,0.9607,false,Normal,0.0385,Ok,All checks passed,OK
+2026-03-04 14:45:33,2026-03-04 14:45:34,144533-0050,MediumBox,Scratch,true,PRD-260304-1920-OK,0.8877,true,Scratch,0.9401,Ng,Shape defect detected: Scratch (0.94),NG
+2026-03-04 14:45:34,2026-03-04 14:45:35,144534-0051,LargeBox,None,true,PRD-260304-9386-OK,0.9028,false,Normal,0.2520,Ok,All checks passed,OK
+2026-03-04 14:45:35,2026-03-04 14:45:36,144535-0052,LargeBox,Stain,true,PRD-260304-6799-FAIL,0.9234,true,Stain,0.9523,Ng,Shape defect detected: Stain (0.95),NG
+2026-03-04 14:45:36,2026-03-04 14:45:37,144536-0053,SmallBox,Stain,true,PRD-260304-7858-OK,0.9813,true,Stain,0.6758,Ng,Shape defect detected: Stain (0.68),NG
+2026-03-04 14:45:37,2026-03-04 14:45:38,144537-0054,MediumBox,None,true,PRD-260304-1909-FAIL,0.9049,false,Normal,0.2126,Ng,Barcode lot marked as FAIL,NG
+2026-03-04 14:45:38,2026-03-04 14:45:39,144539-0055,LargeBox,Missing,false,,0.2030,true,Missing,0.8335,Ng,Barcode read failed,NG
+2026-03-04 14:45:39,2026-03-04 14:45:40,144540-0056,MediumBox,None,true,PRD-260304-5257-OK,0.9369,false,Normal,0.0932,Ok,All checks passed,OK
+2026-03-04 14:45:40,2026-03-04 14:45:41,144541-0057,SmallBox,None,true,PRD-260304-2125-OK,0.8997,false,Normal,0.2144,Ok,All checks passed,OK
+2026-03-04 14:45:41,2026-03-04 14:45:42,144542-0058,SmallBox,None,true,PRD-260304-8141-OK,0.8651,true,Missing,0.6964,Ng,Shape defect detected: Missing (0.70),NG
+2026-03-04 14:45:42,2026-03-04 14:45:43,144543-0059,SmallBox,None,true,PRD?260304-6778-OK,0.9811,false,Normal,0.2845,Ok,All checks passed,OK
