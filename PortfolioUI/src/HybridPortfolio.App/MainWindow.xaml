@@ -26,6 +26,17 @@
             <DockPanel LastChildFill="False">
                 <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Left">
+                    <TextBlock VerticalAlignment="Center"
+                               Margin="0,0,8,0"
+                               FontWeight="SemiBold"
+                               Text="Mode" />
+                    <ComboBox x:Name="CmbRunMode"
+                              Width="120"
+                              Margin="0,0,12,0"
+                              SelectionChanged="CmbRunMode_SelectionChanged">
+                        <ComboBoxItem Content="Sim" IsSelected="True" />
+                        <ComboBoxItem Content="Vision" />
+                    </ComboBox>
                     <Button x:Name="BtnRunOne"
                             Content="Run One Cycle"
                             Width="130"

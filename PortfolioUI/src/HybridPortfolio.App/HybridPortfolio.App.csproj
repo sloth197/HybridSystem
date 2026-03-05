@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\HybridPortfolio.Core\HybridPortfolio.Core.csproj" />
     <ProjectReference Include="..\HybridPortfolio.Sim\HybridPortfolio.Sim.csproj" />
+    <ProjectReference Include="..\HybridPortfolio.Vision\HybridPortfolio.Vision.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

@@ -8,3 +8,4 @@ models/*.onnx
 *.pdb
 *.vspscc
 HShardware/build/
+PortfolioUI/**/reports/
