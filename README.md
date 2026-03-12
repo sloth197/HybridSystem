@@ -98,7 +98,6 @@ HybridSystem은 이러한 문제를 해결하기 위해 **복수의 판정 기�
    	- 검사 결과 (CSV, JSONL) 저장
    	- 화면 상단 (Total, Ok Rate, NG Rate, Barcode Fail Rate) 통계 표시
   
-4. 데모 자료 (GIF) 추가
-     - `PortfolioUI/docs/gif/auto-run.gif`
-  
+4. 데모 자료 (GIF)
 
+<img src="https://github.com/sloth197/HybridSystem/blob/main/PortfolioUI/docs/gif/auto-run.gif?raw=true" width="800"
